@@ -14,11 +14,10 @@ Fechar Navegador
     Close Browser
 
 Abrir Navegador
-    Set Selenium Timeout    20s
-    Set Selenium Speed    5s
+
     ${chrome options} =     Evaluate    selenium.webdriver.ChromeOptions()
     ...                     modules=selenium, selenium.webdriver
-    Call Method    ${chrome_options}   add_argument    --headless
+   # Call Method    ${chrome_options}   add_argument    --headless
     Call Method    ${chrome_options}   add_argument    --no-sandbox
     Call Method    ${chrome_options}   add_argument    --disable-dev-shm-usage
     Call Method    ${chrome_options}   add_argument    --ignore-certificate-errors
@@ -27,7 +26,8 @@ Abrir Navegador
     Create Webdriver  driver_name=${BROWSER}   alias=Google   options=${chrome_options}
     Go To    ${URL}
     Maximize Browser Window
-    Sleep    10
+    Set Selenium Timeout    30s
+    Set Selenium Speed    1s
     
 Type text in Selection
     [Arguments]    ${text}

@@ -6,11 +6,11 @@ Dado que estou o blog do Agibank
     Title Should Be    ${home.agibank_blog_title}
 
 E clico na lupa de busca
-    Wait Until Page Contains    Código 1929 INSS: entenda o que é e como pagar
     Wait Until Element Is Visible    ${MENU_SUAS_FINANCAS}
+    Mouse Over     ${MENU_SUAS_FINANCAS}
     Click Element    ${MENU_SUAS_FINANCAS}
-    Sleep    2
-    Wait Until Element Is Enabled    ${ICON_LUPA}
+    Wait Until Page Does Not Contain    Código 1929 INSS: entenda o que é e como pagar
+    Wait Until Element Is Visible    ${ICON_LUPA}
     Click Element    ${ICON_LUPA}
 
 Quando efetuo a busca por 
@@ -19,12 +19,11 @@ Quando efetuo a busca por
 
 Então deve ser exibida a mensagem
     [Arguments]    ${TEXTO}
-    Sleep    5
+    Scroll Element Into View    //*[contains(normalize-space(.), '${TEXTO}')]
     Page Should Contain Element    //*[contains(normalize-space(.), '${TEXTO}')]
     Capture Page Screenshot
 
 Então não deve ser exibida a mensagem completa
     [Arguments]    ${TEXTO}
-    Sleep    5
     Page Should Not Contain Element    //*[contains(normalize-space(.), '${TEXTO}')]
     Capture Page Screenshot
