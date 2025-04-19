@@ -1,0 +1,8 @@
+robotframework-seleniumLibrary
+robotframework-pabot==2.16.0
+robotframework~=7.0
+robotframework-faker
+chromedriver-py
+webdriver-manager==4.0.1
+robotframework-yamllibrary       # Biblioteca para interagir com arquivos .yaml
+pyyaml

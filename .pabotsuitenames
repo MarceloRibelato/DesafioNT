@@ -1,0 +1,7 @@
+datasources:cba00d08d0399fc3c299a92649e309c23a6541db
+commandlineoptions:9f8598a690c7367accf83ead504756ddd374acc9
+suitesfrom:no-suites-from-option
+file:6f774ca98fa2963ddeb7a97d61158ef7e2701724
+--suite Suites.ContatoYaman
+--suite Suites.SobreYaman
+--suite Suites.Yaman

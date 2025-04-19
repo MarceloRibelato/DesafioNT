@@ -1,0 +1,30 @@
+resources:
+  repositories:
+  - repository: templates
+    name: Templates/banco-toyota
+    type: git
+    ref: refs/heads/main
+    endpoint: yaman-devsecops-org
+
+
+trigger:
+- main
+
+parameters:
+  - name: parallelismOrSerie
+    displayName: Qtd de Processos
+    type: number
+    default: 0
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- group: DB-Grafana
+
+
+steps:
+- template: Modules/QA/robot-script.yaml@templates
+  parameters:
+    parallelism: ${{ parameters.parallelismOrSerie }}
+
