@@ -18,7 +18,7 @@ Abrir Navegador
     Set Selenium Speed    5s
     ${chrome options} =     Evaluate    selenium.webdriver.ChromeOptions()
     ...                     modules=selenium, selenium.webdriver
-    #Call Method    ${chrome_options}   add_argument    --headless
+    Call Method    ${chrome_options}   add_argument    --headless
     Call Method    ${chrome_options}   add_argument    --no-sandbox
     Call Method    ${chrome_options}   add_argument    --disable-dev-shm-usage
     Call Method    ${chrome_options}   add_argument    --ignore-certificate-errors
