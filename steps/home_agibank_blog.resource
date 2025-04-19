@@ -19,10 +19,12 @@ Quando efetuo a busca por
 
 Então deve ser exibida a mensagem
     [Arguments]    ${TEXTO}
+    Sleep    5
     Page Should Contain Element    //*[contains(normalize-space(.), '${TEXTO}')]
     Capture Page Screenshot
 
 Então não deve ser exibida a mensagem completa
     [Arguments]    ${TEXTO}
+    Sleep    5
     Page Should Not Contain Element    //*[contains(normalize-space(.), '${TEXTO}')]
     Capture Page Screenshot
